@@ -5,5 +5,3 @@ __pycache__/
 .ipynb_checkpoints/
 datasets/raw/ModelNet40
 datasets/processed
-!datasets/raw
-!ckpt_root
