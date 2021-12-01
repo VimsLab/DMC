@@ -18,7 +18,7 @@ bash Anaconda3-2021.05-Linux-x86_64.sh
 conda list
 ```
 
-Change directory (cd) back to where DMC was cloned.
+Change directory (cd) back to where DMC was cloned. Then run the following commands:
 ```
 conda env create -f environment.yml
 conda activate dmc
