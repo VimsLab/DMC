@@ -41,6 +41,11 @@ python preprocess.py
 ```
 
 ## Train MeshNet+SDMC
+We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
+To train this redesigned model to classify meshes in the ModelNet40 run the following command:
+```
+python train.py 
+```
 
 ## Test MeshNet+SDMC
 
