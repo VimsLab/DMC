@@ -48,7 +48,8 @@ To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 r
 ```
 python train.py 
 ```
-
+SDMC in the released code uses neighborhoods with a dilation rate of 1, 2, and 3. The subsampling rate is set to 0.33.
+However, it is easy to change these configurations. 
 
 ## Test MeshNet+SDMC
 To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
