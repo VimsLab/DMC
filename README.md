@@ -10,7 +10,7 @@ Download the pre-processed ModelNet40 data set from [here](https://drive.google.
 
 ## Test MeshNet+SDMC
 
-## Run MeshNet+SDMC on your own data sets
+## Custom data sets
 The original [ModelNet40](http://modelnet.cs.princeton.edu/) data set contains non-manifold meshes. Pre-processing them to have a fixed number of faces is non-trivial. In most cases, [Watertight Manifold](https://github.com/hjwdzh/Manifold) decimated meshes to 1024 faces. However, for a few meshes, we utilized some functionalities in Blender and MeshLab before using Watertight Manifold. If you want our pre-preprocessing code for your own data sets, you can send an email to vinitvs@udel.edu.
 
 ## Citation
