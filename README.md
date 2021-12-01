@@ -40,6 +40,7 @@ Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.)
 ```
 python preprocess.py 
 ```
+The preprocess.py file imports the Mesh class from utils/mesh_utils.py. The programming details and logic to derive the mesh attributes is declared in this mesh_utils.py file. 
 
 ## Train MeshNet+SDMC
 We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
