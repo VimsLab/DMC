@@ -38,7 +38,7 @@ conda activate dmc
 ## Pre-process data set
 Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the .obj files. The derived attributes are saved as .npz files. To pre-process the downloaded data set run the following command:
 ```
-python preprocess.py 
+python preprocess.py ModelNet40
 ```
 The preprocess.py file imports the Mesh class from utils/mesh_utils.py. The programming details and logic to derive the mesh attributes is declared in this mesh_utils.py file. 
 
