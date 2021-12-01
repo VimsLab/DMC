@@ -1,3 +1,3 @@
 # DMC
-Official code and data sets will be released soon.
-If you need the code and data sets before that please contact vinitvs@udel.edu
+Official PyTorch Implementation for [Mesh Classification With Dilated Mesh Convolutions](https://ieeexplore.ieee.org/document/9506311).
+
