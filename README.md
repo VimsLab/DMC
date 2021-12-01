@@ -5,12 +5,18 @@ The code has been implemented and tested on the Ubuntu operating system only.
 ## Install CUDA Toolkit and cuDNN 
 Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching your version of the Ubuntu operating system.
 
-## Download data set
-Download the [pre-processed ModelNet40](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) data set in the datasets/raw/ directory. Files are in the OBJ file format (.obj), and all mesh model consists of precisely 1024 faces. 
-
 ## Install tools on Ubuntu
 ```
 sudo apt install curl
+sudo apt install unzip
+```
+
+## Download data set
+Download the [pre-processed ModelNet40](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) data set in the datasets/raw/ directory. Files are in the OBJ file format (.obj), and all mesh model consists of precisely 1024 faces. Run the following commands:
+```
+cd datasets/raw/ 
+unzip ModelNet40.zip
+rm ModelNet40.zip
 ```
 
 ## Setup Environment
