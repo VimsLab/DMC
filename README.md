@@ -29,8 +29,7 @@ conda env create -f environment.yml
 conda activate dmc
 ```
 ## Pre-process data set
-Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the "raw" mesh. The derived attributes are saved as .npz files.
-To pre-process the downloaded data set run the following command:
+Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the downloaded meshes. The derived attributes are saved as .npz files. To pre-process the downloaded data set run the following command:
 ```
 python preprocess.py 
 ```
