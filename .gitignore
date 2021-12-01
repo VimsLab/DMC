@@ -1,0 +1,7 @@
+
+__pycache__/
+*.py[cod]
+*.pkl
+.ipynb_checkpoints/
+datasets/raw/ModelNet40
+datasets/processed

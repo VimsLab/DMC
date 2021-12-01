@@ -1,0 +1,16 @@
+# CUDA
+cuda_devices: '0'   # multi-gpu training is available
+
+# dataset
+ModelNet40:
+  raw: './datasets/raw/ModelNet40/'
+  processed: './datasets/processed/ModelNet40/'
+  augment_data: False
+  max_faces: 1024
+  load_model: './ckpt_root/ModelNet40/MeshNet_best.pkl'
+
+# MeshNet
+MeshNet:
+  structural_descriptor:
+    num_kernel: 64
+    sigma: 0.2
