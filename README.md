@@ -15,7 +15,7 @@ The original [ModelNet40](http://modelnet.cs.princeton.edu/) data set contains n
 
 ## Citation
 If you found our work useful for your research please consider citing us.
-'''
+```
 @inproceedings{singh2021mesh,
   title={Mesh Classification with Dilated Mesh Convolutions},
   author={Singh, Vinit Veerendraveer and Sheshappanavar, Shivanand Venkanna and Kambhamettu, Chandra},
@@ -24,7 +24,6 @@ If you found our work useful for your research please consider citing us.
   year={2021},
   organization={IEEE}
 }
-'''
-
+```
 
 
