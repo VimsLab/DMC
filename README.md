@@ -34,6 +34,7 @@ Change directory (cd) back to where DMC was cloned. Then run the following comma
 conda env create -f environment.yml
 conda activate dmc
 ```
+
 ## Pre-process data set
 Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the .obj files. The derived attributes are saved as .npz files. To pre-process the downloaded data set run the following command:
 ```
@@ -42,12 +43,16 @@ python preprocess.py
 
 ## Train MeshNet+SDMC
 We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
-To train this redesigned model to classify meshes in the ModelNet40 run the following command:
+To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 run the following command:
 ```
 python train.py 
 ```
 
 ## Test MeshNet+SDMC
+To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
+```
+python test.py 
+```
 
 ## Custom data sets
 The original [ModelNet40](http://modelnet.cs.princeton.edu/) data set contains non-manifold meshes. Pre-processing them to have a fixed number of faces is non-trivial. In most cases, [Watertight Manifold](https://github.com/hjwdzh/Manifold) decimated meshes to 1024 faces. However, for a few meshes, we utilized some functionalities in Blender and MeshLab before using Watertight Manifold. If you want our pre-preprocessing code for your own data sets, you can send an email to vinitvs@udel.edu.
