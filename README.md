@@ -49,6 +49,7 @@ To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 r
 python train.py 
 ```
 
+
 ## Test MeshNet+SDMC
 To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
 ```
@@ -69,5 +70,3 @@ If you found this work helpful for your research, please consider citing us.
   organization={IEEE}
 }
 ```
-
-
