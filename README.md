@@ -42,6 +42,11 @@ python preprocess.py ModelNet40
 ```
 The preprocess.py file imports the Mesh class from utils/mesh_utils.py. The programming details and logic to derive the mesh attributes is declared in this mesh_utils.py file. 
 
+To visualize the derived mesh attributes run the following command:
+```
+jupyter notebook demo.ipynb
+```
+
 ## Train MeshNet+SDMC
 We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
 To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 run the following command:
