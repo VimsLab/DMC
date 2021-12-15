@@ -1,3 +1,10 @@
+"""
+Code for the paper "Mesh Classification with Dilated Mesh Convolutions."
+published in 2021 IEEE International Conference on Image Processing.
+Code Author: Vinit Veerendraveer Singh.
+Copyright (c) VIMS Lab and its affiliates.
+This file contains the data loader for the ModelNet40 data set.
+"""
 import numpy as np
 import os
 import torch
@@ -15,13 +22,28 @@ type_to_index_map = {
 }
 
 class ModelNet40(data.Dataset):
-
+    """ This class contains functions to load the training set and the test set
+    of the pre-processed ModelNet40 dataset in the dataset/processed directory.
+    """
     def __init__(self, cfg, part='train'):
-        self.root = cfg['processed']
-        self.augment_data = cfg['augment_data']
-        self.max_faces = cfg['max_faces']
-        self.part = part
+        """
+        Args:
+            - cfg: dict, configuration details of the pre-processed ModelNet40
+                   data set to to load it from the disk correctly.
 
+            - part: str, the training set or the testing set of ModelNet40
+        """
+        # directory where the pre-processed ModelNet40 dataset is stored on disk
+        self.root = cfg['processed']
+        # boolean flag in the case of data augmentations are to be performed
+        # Note: No data augmentations are performed for MeshNet + SDMC
+        self.augment_data = cfg['augment_data']
+        # The number of faces needs to be the same for training
+        # MeshNet and its variants with a batch size greater than one.
+        self.max_faces = cfg['max_faces']
+        # the training set or the testing set of ModelNet40
+        self.part = part
+        # Read data from directory
         self.data = []
         for type in os.listdir(self.root):
             type_index = type_to_index_map[type]
@@ -34,6 +56,8 @@ class ModelNet40(data.Dataset):
         path, type = self.data[i]
         data = np.load(path)
 
+        # Ideally, the face variable would be named face_features but is still
+        # named as face to conform to the original MeshNet code
         face = data['face_features']
 
         ring_1st = data['ring_1st']

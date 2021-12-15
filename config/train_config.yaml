@@ -1,5 +1,5 @@
 # CUDA
-cuda_devices: '0, 1'   # multi-gpu training is available
+cuda_devices: '0, 1, 2, 3'   # multi-gpu training is available
 
 # dataset
 ModelNet40:

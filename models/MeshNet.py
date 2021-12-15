@@ -1,3 +1,12 @@
+"""
+Code for the paper "Mesh Classification with Dilated Mesh Convolutions."
+published in 2021 IEEE International Conference on Image Processing.
+Code Author: Vinit Veerendraveer Singh.
+Copyright (c) VIMS Lab and its affiliates.
+This file contains the MeshNet + SDMC model.
+Note: For the ease of exposition and to keep this file coherent with the train.py
+in the original MeshNet code, we do not add code comments to this file.
+"""
 import torch
 import torch.nn as nn
 from models import SpatialDescriptor, StructuralDescriptor, SDMC
@@ -10,8 +19,10 @@ class MeshNet(nn.Module):
 
         self.spatial_descriptor = SpatialDescriptor()
         self.structural_descriptor = StructuralDescriptor(cfg['structural_descriptor'])
+        # Replaced the Mesh Convolution block in MeshNet with SDMC
         self.mesh_conv1 = SDMC(64, 131, 256, 256)
         self.mesh_conv2 = SDMC(256, 256, 512, 512)
+
         self.fusion_mlp = nn.Sequential(
             nn.Conv1d(1024, 1024, 1),
             nn.BatchNorm1d(1024),

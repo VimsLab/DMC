@@ -20,14 +20,14 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Use: python preprocess.py <dataset>')
         print('<dataset> can be one of the following: ')
-        print('ModelNet40, 3DFUTURE')
+        print('ModelNet40')
         print('For example:')
         print('python preprocess.py ModelNet40')
         exit(0)
     elif len(sys.argv) == 2:
-        if str(sys.argv[1]) not in ['ModelNet40', '3DFUTURE']:
+        if str(sys.argv[1]) not in ['ModelNet40']:
             raise ValueError('Invalid <dataset>!'
-                             'Valid datasets are: ModelNet40, 3DFUTURE.')
+                             'Valid datasets are: ModelNet40.')
         else:
             dataset = str(sys.argv[1])
 

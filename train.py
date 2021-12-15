@@ -1,3 +1,14 @@
+"""
+Code for the paper "Mesh Classification with Dilated Mesh Convolutions."
+published in 2021 IEEE International Conference on Image Processing.
+Code Author: Vinit Veerendraveer Singh.
+Copyright (c) VIMS Lab and its affiliates.
+We adapt MeshNet to perform dilated convolutions by replacing the Stacked Dilated
+Mesh Convolution (SDMC) block in place of its Mesh Convolution (MC) block.
+This file trains this redesigned MeshNet model.
+Note: For the ease of exposition and to keep this file coherent with the train.py
+in the original MeshNet code, we do not add code comments to this file.
+"""
 import copy
 import os
 import torch
@@ -8,27 +19,27 @@ import torch.utils.data as data
 from config import get_train_config
 from data import ModelNet40
 from models import MeshNet
-from utils import append_feature, calculate_map
-import time
 
 dataset = 'ModelNet40'
 cfg = get_train_config(dataset=dataset)
 os.environ['CUDA_VISIBLE_DEVICES'] = cfg['cuda_devices']
 
-
 data_set = {
     x: ModelNet40(cfg=cfg[dataset], part=x) for x in ['train', 'test']
 }
+
 data_loader = {
-    x: data.DataLoader(data_set[x], batch_size=cfg['batch_size'], num_workers=4, shuffle=True, pin_memory=False)
+    x: data.DataLoader(data_set[x],
+                       batch_size=cfg['batch_size'],
+                       num_workers=4,
+                       shuffle=True,
+                       pin_memory=False)
     for x in ['train', 'test']
 }
-
 
 def train_model(model, criterion, optimizer, scheduler, cfg):
 
     best_acc = 0.0
-    best_map = 0.0
     best_model_wts = copy.deepcopy(model.state_dict())
 
     for epoch in range(1, cfg['max_epoch']):
@@ -76,7 +87,6 @@ def train_model(model, criterion, optimizer, scheduler, cfg):
             epoch_loss = running_loss / len(data_set[phrase])
             epoch_acc = running_corrects.double() / len(data_set[phrase])
 
-
             if phrase == 'train':
                 scheduler.step()
                 print('{} Loss: {:.4f} Acc: {:.4f}'.format(phrase, epoch_loss, epoch_acc))
@@ -87,7 +97,8 @@ def train_model(model, criterion, optimizer, scheduler, cfg):
                     best_model_wts = copy.deepcopy(model.state_dict())
 
                 if epoch % 10 == 0:
-                    torch.save(copy.deepcopy(model.state_dict()), cfg[dataset]['ckpt_root'] + '{}.pkl'.format(epoch))
+                    torch.save(copy.deepcopy(model.state_dict()),
+                               cfg[dataset]['ckpt_root'] + '{}.pkl'.format(epoch))
 
                 print('{} Loss: {:.4f} Acc: {:.4f}'.format(phrase, epoch_loss, epoch_acc))
 
@@ -96,13 +107,25 @@ def train_model(model, criterion, optimizer, scheduler, cfg):
 
 if __name__ == '__main__':
 
-    model = MeshNet(cfg=cfg['MeshNet'], require_fea=True)
-    model.cuda()
-    model = nn.DataParallel(model)
+    model_ft = MeshNet(cfg=cfg['MeshNet'], require_fea=True)
+    model_ft.cuda()
+    model_ft = nn.DataParallel(model_ft)
 
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=cfg['lr'], momentum=cfg['momentum'], weight_decay=cfg['weight_decay'])
-    scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=cfg['milestones'], gamma=cfg['gamma'])
+    criterion_ft = nn.CrossEntropyLoss()
 
-    best_model_wts = train_model(model, criterion, optimizer, scheduler, cfg)
+    optimizer_ft = optim.SGD(model_ft.parameters(),
+                             lr=cfg['lr'],
+                             momentum=cfg['momentum'],
+                             weight_decay=cfg['weight_decay'])
+
+    scheduler_ft = optim.lr_scheduler.MultiStepLR(optimizer_ft,
+                                                  milestones=cfg['milestones'],
+                                                  gamma=cfg['gamma'])
+
+    best_model_wts = train_model(model=model_ft,
+                                 criterion=criterion_ft,
+                                 optimizer=optimizer_ft,
+                                 scheduler=scheduler_ft,
+                                 cfg=cfg)
+
     torch.save(best_model_wts, os.path.join(cfg[dataset]['ckpt_root'], 'MeshNet_best.pkl'))

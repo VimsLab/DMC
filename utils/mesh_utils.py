@@ -3,6 +3,8 @@ Code for the paper "Mesh Classification with Dilated Mesh Convolutions."
 published in 2021 IEEE International Conference on Image Processing.
 Code Author: Vinit Veerendraveer Singh
 Copyright (c) VIMS Lab and its affiliates
+The programming details and logic to derive the mesh attributes from meshes in
+OBJ file format is declared in this file.
 """
 import os.path as osp
 import warnings
@@ -183,8 +185,10 @@ class Mesh:
             One of the following:
             - ring_1st: (num_faces, 3), the ring neighbors around faces' for a
                         dilation rate of 1.
+
             - ring_2nd: (num_faces, 6), the ring neighbors around faces' for a
                         dilation rate of 2.
+
             - ring_3rd: (num_faces, 12), the ring neighbors around faces' for a
                         dilation rate of 3.
         """
