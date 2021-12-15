@@ -63,7 +63,7 @@ Copy the URL (http://localhost:8889/?token=...) .
 
 And run the following command on the client side with a browser:
 ```
-ssh -L 8080:localhost:8889 <REMOTE_USER>@<REMOTE_IP_ADDRESS>
+ssh -L 8889:localhost:8889 <REMOTE_USER>@<REMOTE_IP_ADDRESS>
 ```
 Paste the URL.
 
