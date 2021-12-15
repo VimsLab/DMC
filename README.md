@@ -42,7 +42,7 @@ pip install gdown
 Download the [pre-processed ModelNet40](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) data set in the datasets/raw/ directory. Files are in the OBJ file format (.obj), and all mesh model consists of precisely 1024 faces. Run the following commands:
 ```
 cd datasets/raw/
-gdown https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF
+gdown https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF -O ModelNet40.zip
 unzip ModelNet40.zip
 rm ModelNet40.zip
 ```
