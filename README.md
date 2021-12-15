@@ -19,12 +19,16 @@ Make sure the Anaconda Python Distribution is installed and cuda. Then run the f
 cd DMC
 conda env create -f environment.yml
 conda activate dmc
-pip install torch-scatter -f https://data.pyg.org/whl/torch-1.7.0+cu102.html
-pip install torch-sparse -f https://data.pyg.org/whl/torch-1.7.0+cu102.html
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
+pip install torch-sparse -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
 pip install torch-geometric
+pip install fvcore
+pip install iopath
+pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py37_cu101_pyt170/download.htm
 pip install matplotlib
 pip install gdown
 ```
+
 
 ## Download data set
 Download the [pre-processed ModelNet40](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) data set in the datasets/raw/ directory. Files are in the OBJ file format (.obj), and all mesh model consists of precisely 1024 faces. Run the following commands:
