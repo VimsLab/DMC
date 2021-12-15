@@ -19,13 +19,13 @@ Make sure the Anaconda Python Distribution is installed and cuda. Then run the f
 cd DMC
 conda env create -f environment.yml
 conda activate dmc
-pip install torch==1.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
-pip install torch-scatter -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
-pip install torch-sparse -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
+pip install torch==1.8.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.8.0+cu101.html
+pip install torch-sparse -f https://data.pyg.org/whl/torch-1.8.0+cu101.html
 pip install torch-geometric
 pip install fvcore
 pip install iopath
-pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py37_cu101_pyt170/download.htm
+pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py37_cu101_pyt180/download.htm
 pip install matplotlib
 pip install gdown
 ```
