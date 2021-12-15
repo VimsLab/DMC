@@ -5,7 +5,7 @@ The code has been implemented and tested on the Ubuntu operating system only.
 ![Alt text](doc/Figure2.png?raw=true)
 
 ## Install CUDA Toolkit and cuDNN
-Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching the version of your Ubuntu operating system.
+Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching the version of your Ubuntu operating system. Installation of [Anaconda Python Distribution](https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh) is required as well.
 
 ## Install tools on Ubuntu
 ```
@@ -14,17 +14,9 @@ sudo apt install unzip
 ```
 
 ## Setup Environment
-Install the Anaconda Python Distribution if you haven't already.
+Install the Anaconda Python Distribution if you haven't already. Then run the following commands:
 ```
-cd /tmp
-curl -O https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-sha256sum Anaconda3-2021.05-Linux-x86_64.sh
-bash Anaconda3-2021.05-Linux-x86_64.sh
-conda list
-```
-
-Change directory (cd) back to where DMC was cloned. Then run the following commands:
-```
+cd DMC
 conda env create -f environment.yml
 conda activate dmc
 pip install torch==1.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
