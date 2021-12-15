@@ -19,7 +19,6 @@ Make sure the Anaconda Python Distribution is installed and cuda. Then run the f
 cd DMC
 conda env create -f environment.yml
 conda activate dmc
-pip install matplotlib
 pip install gdown
 ```
 
