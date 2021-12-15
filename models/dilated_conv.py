@@ -179,7 +179,8 @@ class SDMC(nn.Module):
                                            self.ring_3rd_mlp,
                                            s=1/3)
 
-        # Concatenated Structural features passed through MLP
+        # Concatenated structural features of different ring neighbor
+        # as per in equation 6 in the paper
         structural_fea = torch.cat([structural_fea,
                                     structural_fea_ring_1st,
                                     structural_fea_ring_2nd,
