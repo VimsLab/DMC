@@ -2,6 +2,8 @@
 Official PyTorch implementation for [Mesh Classification With Dilated Mesh Convolutions](https://ieeexplore.ieee.org/document/9506311).
 The code has been implemented and tested on the Ubuntu operating system only.
 
+![Alt text](../docs/Figure2.png?raw=true)
+
 ## Install CUDA Toolkit and cuDNN
 Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching the version of your Ubuntu operating system.
 
