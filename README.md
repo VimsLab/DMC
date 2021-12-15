@@ -35,6 +35,7 @@ pip install fvcore
 pip install iopath
 pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu111_pyt180/download.htm
 pip install matplotlib
+pip install gdown
 ```
 
 ## Download data set
