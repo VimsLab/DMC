@@ -27,13 +27,13 @@ Change directory (cd) back to where DMC was cloned. Then run the following comma
 ```
 conda env create -f environment.yml
 conda activate dmc
-pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install torch-scatter -f https://data.pyg.org/whl/torch-1.8.0+cu111.html
-pip install torch-sparse -f https://data.pyg.org/whl/torch-1.8.0+cu111.html
+pip install torch==1.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
+pip install torch-sparse -f https://data.pyg.org/whl/torch-1.7.0+cu101.html
 pip install torch-geometric
 pip install fvcore
 pip install iopath
-pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu111_pyt180/download.htm
+pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py37_cu101_pyt170/download.htm
 pip install matplotlib
 pip install gdown
 ```
