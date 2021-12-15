@@ -45,6 +45,7 @@ cd datasets/raw/
 gdown 'https://drive.google.com/uc?id=1YrOkSoAMrfNxW3xpHB1xxVQ01SzE-1LX'
 unzip ModelNet40.zip
 rm ModelNet40.zip
+cd ../..
 ```
 
 ## Pre-process data set
