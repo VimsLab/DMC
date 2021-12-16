@@ -21,6 +21,7 @@ conda env create -f environment.yml
 conda activate dmc
 pip install gdown
 ```
+Note that the installation takes some time. Check out the [video summary](https://youtu.be/Jdl71d3oMRE) of the paper in the meantime!
 
 
 ## Download data set
@@ -32,6 +33,7 @@ unzip ModelNet40.zip
 rm ModelNet40.zip
 cd ../..
 ```
+Note that a GDRIVE account is required to download the data and for gdown to work.
 
 ## Pre-process data set
 Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the .obj files. The derived attributes are saved as .npz files. To pre-process the downloaded data set run the following command:
