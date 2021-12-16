@@ -59,21 +59,6 @@ ssh -L 8889:localhost:8889 <REMOTE_USER>@<REMOTE_IP_ADDRESS>
 ```
 Paste the URL.
 
-## Train MeshNet+SDMC
-We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
-To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 run the following command:
-```
-python train.py
-```
-SDMC in the released code uses neighborhoods with a dilation rate of 1, 2, and 3. The subsampling rate is set to 0.33.
-However, it is easy to change these configurations.
-
-## Test MeshNet+SDMC
-To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
-```
-python test.py
-```
-
 ## Test on pre-trained MeshNet+SDMC
 Download the [pre-trained weights](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) in the ckpt_root/ModelNet40 directory.
 To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
@@ -84,6 +69,27 @@ cd ../..
 python test.py
 ```
 Note that retraining MeshNet+SDMC will over-write the pre-trained weights.
+
+## Train MeshNet+SDMC
+We adapt MeshNet to perform dilated convolutions by replacing our Stacked Dilated Mesh Convolution block in place of its Mesh Convolution block.
+To train this redesigned model (MeshNet+SDMC) to classify meshes in ModelNet40 run the following command:
+```
+python train.py
+```
+SDMC in the released code uses neighborhoods with a dilation rate of 1, 2, and 3. The subsampling rate is set to 0.33.
+However, it is easy to change these configurations.
+
+Our experiments ran on 4 GeForce RTX 2080 Ti Graphics Card. To ensure all four GPU's are used for training run the following command: 
+```
+export CUDA_DEVICE_ORDER="PCI_BUS_ID"
+export CUDA_VISIBLE_DEVICES="0, 1, 2, 3"
+```
+
+## Test MeshNet+SDMC
+To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
+```
+python test.py
+```
 
 ## Custom data sets
 The original [ModelNet40](http://modelnet.cs.princeton.edu/) data set contains non-manifold meshes. Pre-processing them to have a fixed number of faces is non-trivial. In most cases, [Watertight Manifold](https://github.com/hjwdzh/Manifold) decimated meshes to 1024 faces. However, for a few meshes, we utilized some functionalities in Blender and MeshLab before using Watertight Manifold. If you want our pre-preprocessing code for your own data sets, you can send an email to vinitvs@udel.edu.
