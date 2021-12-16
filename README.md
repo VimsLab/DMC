@@ -76,6 +76,9 @@ python test.py
 Download the [pre-trained weights](https://drive.google.com/drive/folders/1y-8m-GRErxCMkuJJf6t8yYSHztlUO0xF?usp=sharing) in the ckpt_root/ModelNet40 directory.
 To test MeshNet+SDMC to classify meshes in ModelNet40 run the following command:
 ```
+cd ckpt_root/ModelNet40
+gdown https://drive.google.com/uc?id=1r-ACZ0JI1-Gyw8TFygKfQ2Yd-w5RsiFo
+cd ../..
 python test.py
 ```
 Note that retraining MeshNet+SDMC will over-write the pre-trained weights.
