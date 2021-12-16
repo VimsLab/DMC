@@ -1,12 +1,24 @@
 name: dmc
 channels:
   - defaults
+  - pytorch
+  - pyg 
+  - fvcore
+  - iopath
+  - pytorch3d
   - conda-forge
 dependencies:
   - python=3.7.9
   - trimesh=3.9.1
   - numpy=1.19.2
   - pip=20.3
+  - pytorch=1.8.0
+  - cudatoolkit=10.1
+  - torchvision
+  - pyg 
+  - fvcore
+  - iopath
+  - pytorch3d
   - notebook
   - meshplot
   - matplotlib

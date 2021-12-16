@@ -69,7 +69,7 @@ if __name__ == '__main__':
         assert ring_2nd.shape == (max_faces, 6)
         assert ring_3rd.shape == (max_faces, 12)
 
-        faces_features = cat([centers, corners, normals], axis=1)
+        face_features = cat([centers, corners, normals], axis=1)
 
         # Save mesh attributes in ".datasets/processed/dataset".
         file_path_processed = file_path_raw.replace(cfg[dataset]["raw"],
@@ -81,7 +81,7 @@ if __name__ == '__main__':
         savez(file_path_processed,
               verts=verts,
               faces=faces,
-              faces_features=faces_features,
+              face_features=face_features,
               ring_1st=ring_1st,
               ring_2nd=ring_2nd,
               ring_3rd=ring_3rd)
