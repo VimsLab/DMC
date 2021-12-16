@@ -5,7 +5,7 @@ The code has been implemented and tested on the Ubuntu operating system only.
 ![Alt text](doc/Figure2.png?raw=true)
 
 ## Install CUDA Toolkit and cuDNN
-Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching the version of your Ubuntu operating system. Installation of the [Anaconda Python Distribution](https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh) is required as well.
+Install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) and the [cuDNN library](https://developer.nvidia.com/rdp/cudnn-archive) matching the version of your Ubuntu operating system. Installation of the [Anaconda Python Distribution](https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh) is required as well. We recommend installing CUDA10.1.
 
 ## Install tools on Ubuntu
 ```
