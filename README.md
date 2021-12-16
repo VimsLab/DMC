@@ -82,7 +82,7 @@ However, it is easy to change these configurations.
 Our experiments ran on 4 GeForce RTX 2080 Ti Graphics Card. To ensure all four GPU's are used for training run the following command: 
 ```
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-export CUDA_VISIBLE_DEVICES="0, 1, 2, 3"
+export CUDA_VISIBLE_DEVICES="0,1,2,3"
 ```
 
 ## Test MeshNet+SDMC
