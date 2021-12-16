@@ -33,7 +33,7 @@ unzip ModelNet40.zip
 rm ModelNet40.zip
 cd ../..
 ```
-Note that a GDRIVE account is required to download the data and for gdown to work.
+Note that a Google Drive account is required to download the data and for gdown to work.
 
 ## Pre-process data set
 Pre-processing is performed to derive mesh attributes (e.g., faces, rings, etc.) from the .obj files. The derived attributes are saved as .npz files. To pre-process the downloaded data set run the following command:
